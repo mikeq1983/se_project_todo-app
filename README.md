@@ -1,17 +1,17 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+A simple and easy todo app to keep track of all your important events.
 
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+Easy to use and straightfowrad. You can add or delete items with or without a due date attached to it.
 
 ## Technology
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+HTML, CSS and Javascript.
 
 ## Deployment
 
 This project is deployed on GitHub Pages:
 
-- ADD LINK HERE
+- [text](https://mikeq1983.github.io/se_project_todo-app/index.html)
