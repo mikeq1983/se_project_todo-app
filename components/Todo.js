@@ -1,14 +1,19 @@
 class Todo {
-  constructor(data, selector) {
+  constructor(data, selector, handleCheck, updateTotal, handleDelete) {
     this._data = data;
     this._templateElement = document.querySelector(selector);
+    this._handleCheck = handleCheck;
+    this._updateTotal = updateTotal;
+    this._handleDelete = handleDelete;
   }
 
   _setEventListeners() {
     this._todoCheckboxEl.addEventListener("change", () => {
       this._data.completed = !this._data.completed;
+      this._handleCheck(this._data.completed);
     });
     this._todoDeleteBtn.addEventListener("click", () => {
+      this._handleDelete(this._data.completed);
       this._todoElement.remove();
     });
   }
@@ -28,11 +33,14 @@ class Todo {
 
     this._dueDate = new Date(this._data.date);
     if (!isNaN(this._dueDate)) {
-      this._todoDate.textContent = `Due: ${this._dueDate.toLocaleString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      })}`;
+      this._todoDate.textContent = `Due: ${this._dueDate.toLocaleString(
+        "en-US",
+        {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        }
+      )}`;
     }
 
     this._todoCheckboxEl.id = `todo-${this._data.id}`;
