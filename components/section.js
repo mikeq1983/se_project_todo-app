@@ -8,10 +8,10 @@ class Section {
   renderItems() {
     this._items.forEach((item) => {
       const newElement = this._renderer(item);
-      this._container.append(newElement);
-    })
-    };
-   
+      this.addItem(newElement);
+    });
+  }
+
   addItem(element) {
     this._container.append(element);
   }
